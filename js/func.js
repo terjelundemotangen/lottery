@@ -9,12 +9,15 @@ const showTickets = document.querySelector('#tickets-show');
 
 const winners = document.querySelector('#winners');
 const numberWinners = document.querySelector('#number-winners');
+const numberOfWins = document.querySelector('#number-of-wins');
 
 // const form = document.querySelector('#participant-form');
 // const formSettings = document.querySelector('#form-settings');
 const donateInput = document.querySelector('#donated-amount');
 
+// Global variables
 let count = 0;
+let newWinner = [];
 
 loadEventListeners();
 
@@ -94,12 +97,19 @@ function checkTickets(e) {
   let clickID;
   const allTickets = document.querySelectorAll('.ticket');
   let numberWinners;
+  let numberOfWins;
 
   // Get number of winners
   if(localStorage.getItem('numberWinners') === null) {
     numberWinners = 1;
   } else {
     numberWinners = localStorage.getItem('numberWinners');
+  }
+  // Get number of wins per person
+  if(localStorage.getItem('numberOfWins') === null) {
+    numberOfWins = 1;
+  } else {
+    numberOfWins = localStorage.getItem('numberOfWins');
   }
 
   if(e.target.parentElement.classList.contains('ticket')) {
@@ -123,6 +133,17 @@ function checkTickets(e) {
       winners.insertBefore(li, winners.firstChild);
       allTickets[clickID - 1].className = 'ticket finished winner-ticket';
     }
+    // Add winner to array
+    newWinner.push(clickName);
+    if(getOccurrence(newWinner, clickName) >= numberOfWins) {
+      // Turn all tickets for this name
+      let ticketName = document.querySelectorAll('[name=' + clickName + ']');
+      for(let i = 0; i < ticketName.length; i++) {
+        ticketName[i].classList.remove('fresh');
+        ticketName[i].classList.add('finished');
+      }
+    }
+
     count++;
     if(numberWinners <= count) {
       let tickets = document.querySelectorAll('.fresh');
@@ -131,17 +152,21 @@ function checkTickets(e) {
         tickets[i].classList.remove('fresh');
         tickets[i].classList.add('finished');
       }
-
-      //document.querySelectorAll('.fresh').classList.remove('fresh');
     }
   }
+}
 
+function getOccurrence(array, value) {
+  var count = 0;
+  array.forEach((v) => (v === value && count++));
+  return count;
 }
 
 function saveSettings(e) {
   e.preventDefault();
   localStorage.setItem('donatedTickets', donateInput.value);
   localStorage.setItem('numberWinners', numberWinners.value);
+  localStorage.setItem('numberOfWins', numberOfWins.value);
   document.querySelector('#settings').classList.remove('show');
 }
 
@@ -155,6 +180,11 @@ function getSettings() {
     numberWinners.value = 1;
   } else {
     numberWinners.value = localStorage.getItem('numberWinners');
+  }
+  if(localStorage.getItem('numberOfWins') === null) {
+    numberOfWins.value = 1;
+  } else {
+    numberOfWins.value = localStorage.getItem('numberOfWins');
   }
 }
 

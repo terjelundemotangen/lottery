@@ -9,3 +9,6 @@ Settings
 Lets you specify the amount paid to get 1 ticket (default 50).
 You can also specify the number of winners (default 1).
 Settings are automatically hidden on page load and saving.
+
+Participants can be delete by clicking the ♥ after the name.
+Hide participants by click the heading.

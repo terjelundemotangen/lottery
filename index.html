@@ -74,7 +74,16 @@
                         <span class="input-group-text"> winners in this lottery</span>
                       </div>
                     </div>
-                    <div class="input-group mb-2 mt-4">
+                    <div class="input-group mt-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">One person can win a maximum of</span>
+                      </div>
+                      <input type="number" id="number-of-wins" class="form-control">
+                      <div class="input-group-append">
+                        <span class="input-group-text"> prizes</span>
+                      </div>
+                    </div>
+                    <div class="input-group mb-2 mt-3">
                       <button type="submit" id="save-settings" class="btn btn-outline-primary" name="button">Save settings</button>
                     </div>
                   </form>
@@ -83,7 +92,7 @@
             </div><!-- col-md-8 -->
             <div class="col-md-2 fog">
               <div>
-                <a class="no-color" data-toggle="collapse" href="#collapseParticipants" aria-expanded="true" aria-controls="collapseParticipants"><h2 class="display-5">Participants</h2></a>
+                <a class="no-color" data-toggle="collapse" href="#collapseParticipants" aria-expanded="true" aria-controls="collapseParticipants"><h3>Participants</h3></a>
                 <div class="collapse show" id="collapseParticipants">
                   <ul id="participants" class="participants">
 

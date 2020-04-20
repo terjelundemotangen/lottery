@@ -12,4 +12,4 @@ You can also specify the number of winners (default 1).
 Settings are automatically hidden on page load and saving.
 
 Participants can be delete by clicking the ♥ after the name.
-Hide participants by click the heading.
+Click heading to hide participants.

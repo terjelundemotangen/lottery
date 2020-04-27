@@ -9,11 +9,6 @@ img {
 }
 
 #cover {
-  /*background: #222 url('../img/chalkboard.jpg') center center no-repeat;*/
-  /*background: #222 url('../img/hearthand.jpg') center center no-repeat;*/
-  /* background: #222 url('../img/wine.jpg') center center no-repeat; */
-  background: #222 url('../img/tango.jpg') center center no-repeat;
-  background-size: cover;
   color: white;
   height: 100%;
   display: flex;
@@ -22,6 +17,15 @@ img {
 
 #cover-caption {
   width: 100%;
+}
+
+.site {
+  /*background: #222 url('../img/chalkboard.jpg') center center no-repeat;*/
+  /*background: #222 url('../img/hearthand.jpg') center center no-repeat;*/
+  /* background: #222 url('../img/wine.jpg') center center no-repeat; */
+  background: #222 url('../img/tango.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .no-color {

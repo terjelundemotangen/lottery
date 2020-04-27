@@ -14,110 +14,112 @@
     <title>Lottery- the private lessons</title>
   </head>
   <body>
-    <section id="cover">
-      <div id="cover-caption">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10">
-              <div class="row">
-                <h2 class="display-3" id="heading">Lottery - the private lessons</h2>
-              </div>
-              <div id="tickets-show" class="row">
-
-              </div>
-              <div class="participant-input">
-              <form id="participant-form" class="form-inline">
-                <div class="form-input form-row align-items-center">
-                  <div class="col-auto">
-                    <label class="sr-only" for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Add name...">
-                  </div>
-                  <div class="col-auto">
-                    <label class="sr-only" for="donated">Donated</label>
-                    <input type="number" class="form-control" id="donated" name="donated" placeholder="€ payed...">
-                  </div>
-
-                  <div class="col-auto">
-                    <button id="add" type="submit" class="btn btn-outline-success">Add</button>
-                  </div>
-                  <div class="col-auto">
-                    <button id="mix" type="button" class="btn btn-outline-warning" role="button">Mix</button>
-                  </div>
-                  <div class="col-auto">
-                    <button id="delete" type="button" class="btn btn-outline-danger" role="button">Empty list</button>
-                  </div>
+    <div class="site">
+      <section id="cover">
+        <div id="cover-caption">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10">
+                <div class="row">
+                  <h2 class="display-3" id="heading">Lottery - the private lessons</h2>
                 </div>
-              </form>
-              </div>
+                <div id="tickets-show" class="row">
 
-              <div class="mt-5">
+                </div>
+                <div class="participant-input">
+                <form id="participant-form" class="form-inline">
+                  <div class="form-input form-row align-items-center">
+                    <div class="col-auto">
+                      <label class="sr-only" for="name">Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Add name...">
+                    </div>
+                    <div class="col-auto">
+                      <label class="sr-only" for="donated">Donated</label>
+                      <input type="number" class="form-control" id="donated" name="donated" placeholder="€ payed...">
+                    </div>
+
+                    <div class="col-auto">
+                      <button id="add" type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                    <div class="col-auto">
+                      <button id="mix" type="button" class="btn btn-outline-warning" role="button">Mix</button>
+                    </div>
+                    <div class="col-auto">
+                      <button id="delete" type="button" class="btn btn-outline-danger" role="button">Empty list</button>
+                    </div>
+                  </div>
+                </form>
+                </div>
+
+                <div class="mt-5">
+                  <div>
+                    <a class="no-color" data-toggle="collapse" href="#settings"><p>Settings</p></a>
+                  </div>
+                  <div class="collapse" id="settings">
+                    <form id="form-settings">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">€</span>
+                        </div>
+                        <input type="number" id="donated-amount" class="form-control" aria-label="Amount (to the nearest euro)">
+                        <div class="input-group-append">
+                          <span class="input-group-text"> gives 1 ticket</span>
+                        </div>
+                      </div>
+                      <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">There will be</span>
+                        </div>
+                        <input type="number" id="number-winners" class="form-control">
+                        <div class="input-group-append">
+                          <span class="input-group-text"> winner(s) in this lottery</span>
+                        </div>
+                      </div>
+                      <div class="input-group mt-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">One person can win a maximum of</span>
+                        </div>
+                        <input type="number" id="number-of-wins" class="form-control">
+                        <div class="input-group-append">
+                          <span class="input-group-text"> prize(s)</span>
+                        </div>
+                      </div>
+                      <div class="input-group mb-2 mt-3">
+                        <button type="submit" id="save-settings" class="btn btn-outline-primary" name="button">Save settings</button>
+                      </div>
+                    </form>
+                  </div>
+                </div><!-- row mt-5 -->
+              </div><!-- col-md-8 -->
+              <div class="col-md-2 fog">
                 <div>
-                  <a class="no-color" data-toggle="collapse" href="#settings"><p>Settings</p></a>
+                  <a class="no-color" data-toggle="collapse" href="#collapseParticipants" aria-expanded="true" aria-controls="collapseParticipants"><h3>Participants</h3></a>
+                  <div class="collapse show" id="collapseParticipants">
+                    <ul id="participants" class="participants">
+
+                    </ul>
+                  </div>
                 </div>
-                <div class="collapse" id="settings">
-                  <form id="form-settings">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">€</span>
-                      </div>
-                      <input type="number" id="donated-amount" class="form-control" aria-label="Amount (to the nearest euro)">
-                      <div class="input-group-append">
-                        <span class="input-group-text"> gives 1 ticket</span>
-                      </div>
-                    </div>
-                    <div class="input-group mt-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">There will be</span>
-                      </div>
-                      <input type="number" id="number-winners" class="form-control">
-                      <div class="input-group-append">
-                        <span class="input-group-text"> winner(s) in this lottery</span>
-                      </div>
-                    </div>
-                    <div class="input-group mt-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">One person can win a maximum of</span>
-                      </div>
-                      <input type="number" id="number-of-wins" class="form-control">
-                      <div class="input-group-append">
-                        <span class="input-group-text"> prize(s)</span>
-                      </div>
-                    </div>
-                    <div class="input-group mb-2 mt-3">
-                      <button type="submit" id="save-settings" class="btn btn-outline-primary" name="button">Save settings</button>
-                    </div>
-                  </form>
-                </div>
-              </div><!-- row mt-5 -->
-            </div><!-- col-md-8 -->
-            <div class="col-md-2 fog">
-              <div>
-                <a class="no-color" data-toggle="collapse" href="#collapseParticipants" aria-expanded="true" aria-controls="collapseParticipants"><h3>Participants</h3></a>
-                <div class="collapse show" id="collapseParticipants">
-                  <ul id="participants" class="participants">
+                <div>
+                  <h2 class="display-5">Winners</h2>
+                  <ul id="winners" class="winners">
 
                   </ul>
                 </div>
-              </div>
-              <div>
-                <h2 class="display-5">Winners</h2>
-                <ul id="winners" class="winners">
+                <!---
+                <div>
+                  <h2 class="display-5">Non-winners</h2>
+                  <ul id="tapere" class="tapere">
 
-                </ul>
+                  </ul>
+                </div>
+                -->
               </div>
-              <!---
-              <div>
-                <h2 class="display-5">Non-winners</h2>
-                <ul id="tapere" class="tapere">
-
-                </ul>
-              </div>
-              -->
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
